@@ -2,8 +2,7 @@
   <div>
     <main-layout>
       <h1>{{ title }}</h1>
-      <div class="content" v-html="intro"></div>
-      <router-link v-if="intro" class="button" :to="path">Get Started</router-link>
+      <div class="content" v-html="reading"></div>
     </main-layout>
   </div>
 </template>
@@ -16,7 +15,7 @@
       var dayId = parseInt(this.$route.params.id)
       return {
         title: '',
-        intro: '',
+        reading: '',
         id: dayId,
         path: '/days/' + dayId + '/read'
       }
@@ -49,7 +48,7 @@
     methods: {
       addData: function(response) {
         this.title = 'Day ' + response.day,
-        this.intro = response.intro.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
+        this.reading = response.reading.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
       },
     }
   }

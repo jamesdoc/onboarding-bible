@@ -1,8 +1,7 @@
 <template>
   <div>
     <main-layout>
-      <h1>{{ title }}</h1>
-      <img src="/static/images/logo.png">
+      <h1>Welcome</h1>
       <markdown></markdown>
     </main-layout>
   </div>

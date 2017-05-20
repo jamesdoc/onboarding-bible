@@ -17,9 +17,9 @@ module.exports = [
     template: 'Day'
   },
   {
-    path: '/days/:id/read',
+    path: '/days/:id/:method',
     title: 'Day',
-    template: 'Read'
+    template: 'Day'
   },
   {
     path: '*',

@@ -13,6 +13,7 @@
   export default {
     data () {
       var dayId = parseInt(this.$route.params.id)
+      
       return {
         title: '',
         reading: '',

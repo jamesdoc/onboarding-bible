@@ -14,3 +14,5 @@ npm run dev
 npm run build
 node app.js
 ```
+
+http://localhost:8080/

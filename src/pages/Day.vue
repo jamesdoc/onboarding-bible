@@ -3,19 +3,20 @@
     <main-layout class="main-content" v-bind:class="{ introshowing: start }">
       
       <h1><router-link :to="path">{{ title }}</router-link></h1>
-      <div v-if="start" class="intro">
+      
+      <div v-if="start" class="overlay">
         <router-link class="close" :to="path + 'read'"></router-link>
         <div class="content wrap" v-html="intro"></div>
       </div>
+      
       <div class="content content--reading wrap wrap--top" v-if="start || read" v-html="reading"></div>
 
       <div class="content content--reading content--study wrap wrap--top" v-if="study" v-html="reading"></div>
 
-
-      <router-link class="button" v-if="read" :to="path + 'study'">Study</router-link>
-
-      <router-link class="button" v-if="study" :to="path + 'read-again'">Read Again</router-link>
-      <router-link class="button" v-if="readAgain" :to="path + 'end'">End</router-link>
+      <router-link class="button button--short" v-if="read" :to="path + 'study'">Study</router-link>
+      <router-link class="button button--short" v-if="study" :to="path + 'read-again'">Read Again</router-link>
+      <router-link class="button button--short" v-if="readAgain" :to="path + 'end'">End</router-link>
+      
     </main-layout>
   </div>
 </template>
@@ -100,7 +101,7 @@
       addData: function(response) {
         this.title = 'Day ' + response.day,
         this.intro = response.intro.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' ),
-        this.reading = response.reading.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
+        this.reading = response.reading.text.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
       },
     }
   }

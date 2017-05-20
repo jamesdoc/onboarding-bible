@@ -1,8 +1,9 @@
 <template>
   <div>
-    <main-layout>
-      <h1>Welcome</h1>
-      <markdown></markdown>
+    <main-layout class="wrap center">
+      <img src="/static/images/logo.png" class="logo">
+      <markdown class="home"></markdown>
+      <router-link class="button" to="/days/1/">Start Now</router-link>
     </main-layout>
   </div>
 </template>

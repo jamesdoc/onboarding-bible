@@ -1,18 +1,21 @@
 <template>
   <div>
-    <main-layout>
-      <h1>{{ title }}</h1>
-      <div v-if="start">
-        <div class="content" v-html="intro"></div>
+    <main-layout class="main-content" v-bind:class="{ introshowing: start }">
+      
+      <h1><router-link :to="path">{{ title }}</router-link></h1>
+      <div v-if="start" class="intro">
+        <router-link class="close" :to="path + 'read'"></router-link>
+        <div class="content wrap" v-html="intro"></div>
       </div>
-      <div v-if="read">
-        <div class="content" v-html="reading"></div>
-      </div>
-      <router-link class="button" :to="path">Start</router-link>
-      <router-link class="button" :to="path + 'read'">Read</router-link>
-      <router-link class="button" :to="path + 'study'">Study</router-link>
-      <router-link class="button" :to="path + 'read-again'">Read Again</router-link>
-      <router-link class="button" :to="path + 'end'">End</router-link>
+      <div class="content content--reading wrap wrap--top" v-if="start || read" v-html="reading"></div>
+
+      <div class="content content--reading content--study wrap wrap--top" v-if="study" v-html="reading"></div>
+
+
+      <router-link class="button" v-if="read" :to="path + 'study'">Study</router-link>
+
+      <router-link class="button" v-if="study" :to="path + 'read-again'">Read Again</router-link>
+      <router-link class="button" v-if="readAgain" :to="path + 'end'">End</router-link>
     </main-layout>
   </div>
 </template>
@@ -22,7 +25,6 @@
 
   export default {
     data () {
-      console.log('a')
       var dayId = parseInt(this.$route.params.id)
       var method = this.getMethod()
       return {
@@ -37,6 +39,7 @@
 
     watch: {
       '$route': function() {
+        window.scrollTo(0, 0)
         this.method = this.getMethod()
       }
     },

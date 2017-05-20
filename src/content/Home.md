@@ -1,3 +1,3 @@
-# Onboarding onboarding content
+For the next thirty days explore the whole Bible through the Gospel of John
 
-Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.
+We’ll **read**, **listen**, **study** and **pray**.

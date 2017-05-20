@@ -4,17 +4,17 @@ module.exports = [
     title: 'Home'
   },
   {
-    path: '/about',
-    title: 'About'
+    path: '/days',
+    title: 'Days'
   },
   {
     path: '/dynamic',
     title: 'Dynamic',
   },
   {
-    path: '/about/:id',
-    title: 'Dynamic',
-    template: 'AboutSub'
+    path: '/days/:id',
+    title: 'Day',
+    template: 'Day'
   },
   {
     path: '*',

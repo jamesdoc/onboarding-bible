@@ -2,7 +2,7 @@
   <div>
     <main-layout class="main-content" v-bind:class="{ introshowing: start }">
       
-      <h1><router-link :to="path">{{ title }}</router-link></h1>
+      <h1><router-link :to="path + 'read'">{{ title }}</router-link></h1>
       
       <div v-if="start" class="overlay">
         <router-link class="close" :to="path + 'read'"></router-link>
@@ -13,7 +13,7 @@
 
       <div class="content content--reading content--study wrap wrap--top" v-if="study" v-html="reading"></div>
 
-      <router-link class="button button--short" v-if="read" :to="path + 'study'">Study</router-link>
+      <router-link class="button button--short" v-if="read" :to="path + 'study'">Next</router-link>
       <router-link class="button button--short" v-if="study" :to="path + 'read-again'">Read Again</router-link>
       <router-link class="button button--short" v-if="readAgain" :to="path + 'end'">End</router-link>
       
@@ -53,7 +53,7 @@
           instance.addData(response)
         })
         .catch(function(error) {
-          console.log(error)
+          console.error(error)
         })
     },
 
@@ -81,28 +81,31 @@
     methods: {
       getMethod: function() {
         var methodSupplied = this.$route.params.method
-        var method = ''
-        if ( methodSupplied ) {
-          if ( methodSupplied === 'read' ) {
-            method = methodSupplied
-          } else if ( methodSupplied === 'study' ) {
-            method = methodSupplied
-          } else if ( methodSupplied === 'read-again' ) {
-            method = methodSupplied
-          } if ( methodSupplied === 'pray' ) {
-            method = methodSupplied
-          } else if ( methodSupplied === 'end' ) {
-            method = methodSupplied
-          }
+        if ( methodSupplied && ['read', 'study', 'read-again', 'pray', 'end'].includes(methodSupplied) ) {
+          return methodSupplied
         }
-        return method
+
+        return ''
       },
 
       addData: function(response) {
-        this.title = 'Day ' + response.day,
-        this.intro = response.intro.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' ),
-        this.reading = response.reading.text.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
+        this.title = 'Day ' + response.day
+        this.intro = this.parse(response.intro)
+        this.reading = this.parse(response.reading.text)
+        this.anchors = response.reading.anchors
+
+        Object.keys(this.anchors).map(x => {
+          this.reading = this.reading.replace(`href="#${x}"`, `href="#${x}" @click="{{ anchor(${x}) }}"`)
+        })
       },
+
+      parse: function(content) {
+        return content.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' )
+      },
+
+      anchor: function(event) {
+        console.log('a', event)
+      }
     }
   }
 </script>

@@ -1,6 +1,7 @@
 {
   "day": 1,
-  "intro": "<h4>Johns Gospel</h4><p>We're going to be reading the Gospel (which means \"Good News\") written by a man called John in the first century. He calls Jesus \"the Word\"</p>",
+  "title": "<h4>Johns Gospel</h4>",
+  "intro": "<p>We're going to be reading the Gospel (which means \"Good News\") written by a man called John in the first century. He calls Jesus \"the Word\"</p>",
   "reading": {
     "book": "John",
     "chapter": 1,
@@ -10,25 +11,16 @@
   
     "anchors": {
       "1": {
-        "text":"These words are used at the start of the Bible where it describes how God created everything",
-        "reading": {
-          "book": "Genesis",
-          "chapter": 1,
-          "startVerse": 1,
-          "endVerse": 4,
-          "text": "<p>In the beginning God created the heavens and the earth. Now the earth was without shape and empty, and darkness was over the surface of the watery deep, but the Spirit of God was moving over the surface of the water. God said, \"Let there be light.\" And there was light</p>!"
-        }
+        "title": "<h4>In the beginning...</h4><small>Genesis Chapter 1 verse 1-4</small>",
+        "text": "<p>These words are used at the start of the Bible where it describes how God created everything</p><blockquote><p>In the beginning God created the heavens and the earth. Now the earth was without shape and empty, and darkness was over the surface of the watery deep, but the Spirit of God was moving over the surface of the water. God said, \"Let there be light.\" And there was light!</p></blockquote>"
       },
       "2": {
-        "text": "<p>This John isn't the man who wrote this book, but John the Baptist</p>",
-        "reading": {
-          "book": "Matthew",
-          "chapter": 3,
-          "startVerse": 1,
-          "endVerse": 4,
-          "text": "<p>In those days John the Baptist came into the wilderness of Judea proclaiming, \"Repent, for the kingdom of heaven is near.\" 3 For he is the one about whom Isaiah the prophet had spoken: \"The voice of one shouting in the wilderness, ‘Prepare the way for the Lord, make his paths straight.’\" Now John wore clothing made from camel’s hair with a leather belt around his waist, and his diet consisted of locusts and wild honey</p>."
-        }
+        "title": "<h4>John the Baptist</h4><small>Matthew Chapter 1 verse 1-4</small>",
+        "text": "<p>This John isn't the man who wrote this book, but John the Baptist</p><blockquote><p>In those days John the Baptist came into the wilderness of Judea proclaiming, \"Repent, for the kingdom of heaven is near.\" 3 For he is the one about whom Isaiah the prophet had spoken: \"The voice of one shouting in the wilderness, ‘Prepare the way for the Lord, make his paths straight.’\" Now John wore clothing made from camel’s hair with a leather belt around his waist, and his diet consisted of locusts and wild honey.</p></blockquote>"
       }
     }
-  }
+  },
+  "question": "What did you learn about Jesus in this passage? Did anything surprise you?",
+  "pray": "<p>Jesus, thank you that you were there at the beginning of creation, that your light shines in through all the darkness of this world and cannot be overcome by it.</p><p>Thank you that you came to earth so that we can see more of God the Father, and know more of your grace and your truth.</p>",
+  "outro": "<h4>Day one is complete!</h4><p>Tomorrow you’ll be continuing in John’s Gospel looking at what happen when John met Jesus at the river side.</p> <h4>Further study</h4><p>Want to explore more about today’s passage? Listen to <a href=\"http://www.google.co.uk\">this podcast episode</a> about what it means for ‘the word to become flesh’</p>"
 }
